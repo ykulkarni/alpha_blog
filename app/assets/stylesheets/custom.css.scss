@@ -15,7 +15,11 @@ $navbar-default-bg: #F0F8FF;
 }
 
 .footer {
-    background-color: #F0F8FF;
     margin: 10px;
-    border: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+}
+
+.footer ul {
+    float: right;
+    background-color:#F0F8FF;
 }

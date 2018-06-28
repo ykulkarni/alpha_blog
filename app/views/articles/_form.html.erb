@@ -7,19 +7,23 @@
   <%end%>
 <% end %>
 
-<%= form_for @article do |f|%>
-<p>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-</p>
-<p>
-  <%= f.label :description %><br>
-  <%= f.text_area :description %>
-</p>  
-
-<p>
-  <%= f.submit %>
-</p>  
-<% end %>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f|%>
+      
+        <div class="form-group">
+            <div class="col-sm-3 control-label"><%= f.label :title %></div>
+            <div class="col-sm-6"><%= f.text_field :title, class: "form-control", autofocus: true %></div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 control-label"><%= f.label :description %></div>
+            <div class="col-sm-6"><%= f.text_area :description, rows: 10, class: "form-control" %></div>
+        </div> 
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-3"><%= f.submit class: "btn btn-primary btn-medium" %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 <%= link_to "Back to Listing", articles_path %>
