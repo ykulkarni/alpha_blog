@@ -1,0 +1,20 @@
+<% if obj.errors.any? %>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-3">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h3>
+              <%= pluralize(obj.errors.count, "error") %>
+            </h3>
+          </div>
+          <div class="panel-body">
+            <% obj.errors.full_messages.each do |message|%>
+              <li> <%= message %></li>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
