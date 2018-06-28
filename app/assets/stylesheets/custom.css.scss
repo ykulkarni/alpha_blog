@@ -6,8 +6,16 @@ $navbar-default-bg: #F0F8FF;
 #logo {
     font-size: 1.5em;
     font-weight: bold;
+
 }
 
-.center {
-    text-align: center;
+.jumbotron {
+    background-image: asset-url('images.jpg');
+        text-align: right;
+}
+
+.footer {
+    background-color: #F0F8FF;
+    margin: 10px;
+    border: 1px solid #eaeaea;
 }
