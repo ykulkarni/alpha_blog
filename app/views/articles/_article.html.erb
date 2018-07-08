@@ -13,10 +13,12 @@
               Create By: <%= article.user.username if article.user %>, <%= time_ago_in_words(article.created_at)%>
             </div>
           </small>
-          <div class="article_actions">
-            <%= link_to "Edit Article", edit_article_path(article), class: "btn btn-primary"%> | 
-            <%= link_to "Delete Article",  article_path(article), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure you want to delete"} %> |
-          </div>
+          <% if logged_in? && current_user == article.user %>
+            <div class="article_actions">
+                <%= link_to "Edit Article", edit_article_path(article), class: "btn btn-primary"%> | 
+                <%= link_to "Delete Article",  article_path(article), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure you want to delete"} %> |
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
