@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
         else
             flash.now[:danger] = "Email or Password provided don't match our records"
             render "new"
-            
         end
     end
     

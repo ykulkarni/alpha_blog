@@ -14,8 +14,10 @@ class ApplicationController < ActionController::Base
   end
   
   def require_login
-    flash[:danger] = "You need to login before you can access the page"
-    redirect_to root_path
+    if !logged_in?
+      flash[:danger] = "You need to login before you can access the page"
+      redirect_to root_path
+    end
   end
   
   
